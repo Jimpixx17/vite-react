@@ -23,8 +23,8 @@ function App() {
   if (accepted) {
     return (
       <div className="container">
-        <h1>awww 🥰</h1>
-        <h2>love you! Now you're My Valentine 💖</h2>
+        <h1>Awww 🥰</h1>
+        <h2>Love you! Now you're My Valentine 💖</h2>
         <img
           className="cat"
           src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
@@ -36,8 +36,8 @@ function App() {
 
   return (
     <div className="container"
-      <h1>hi emma! 💕</h1>
-      <h2>will you be my valentine?!</h2>
+      <h1>Hi Emma! 💕</h1>
+      <h2>Will you be my valentine?!</h2>
 
       <img
         className="cat"
