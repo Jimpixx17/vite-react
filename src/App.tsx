@@ -3,13 +3,20 @@ import "./App.css";
 
 function App() {
   const [yes, setYes] = useState(false);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  const moveNo = () => {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    setPos({ x, y });
+  };
 
   return (
     <div className="container">
       {yes ? (
         <h1>
-          💖 Yaaay!! 💖 <br />
-          Ich freu mich 😍
+          💖 YAAAY 💖 <br />
+          Dann ist es ein Date 😍
         </h1>
       ) : (
         <>
@@ -23,7 +30,14 @@ function App() {
               Ja 💕
             </button>
 
-            <button className="no">
+            <button
+              className="no"
+              onMouseEnter={moveNo}
+              onClick={moveNo}
+              style={{
+                transform: `translate(${pos.x}px, ${pos.y}px)`
+              }}
+            >
               Nein 🙈
             </button>
           </div>
