@@ -35,7 +35,7 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <div className="container"
       <h1>hi emma! 💕</h1>
       <h2>will you be my valentine?!</h2>
 
