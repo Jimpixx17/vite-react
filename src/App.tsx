@@ -20,48 +20,49 @@ function App() {
     setIsAngry(true);
   };
 
-  if (accepted) {
-    return (
-      <div className="container">
-        <h1>Awww 🥰</h1>
-        <h2>Love you! Now you're My Valentine 💖</h2>
-        <img
-          className="cat"
-          src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
-          alt="happy cat"
-        />
-      </div>
-    );
-  }
-
+  // Alles innerhalb von <div className="container"> als Parent
   return (
-    <div className="container"
-      <h1>Hi Emma! 💕</h1>
-      <h2>Will you be my valentine?!</h2>
+    <div className="container">
+      {!accepted ? (
+        <>
+          <h1>hi emma! 💕</h1>
+          <h2>will you be my valentine?!</h2>
 
-      <img
-        className="cat"
-        src={
-          isAngry
-            ? "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"
-            : "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-        }
-        alt="cat reaction"
-      />
+          <img
+            className="cat"
+            src={
+              isAngry
+                ? "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"
+                : "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+            }
+            alt="cat reaction"
+          />
 
-      <div className="buttons">
-        <button
-          className="yes"
-          style={{ transform: `scale(${yesSize})` }}
-          onClick={() => setAccepted(true)}
-        >
-          YES 💖
-        </button>
+          <div className="buttons">
+            <button
+              className="yes"
+              style={{ transform: `scale(${yesSize})` }}
+              onClick={() => setAccepted(true)}
+            >
+              YES 💖
+            </button>
 
-        <button className="no" onClick={handleNoClick}>
-          {noTexts[Math.min(noClicks, noTexts.length - 1)]}
-        </button>
-      </div>
+            <button className="no" onClick={handleNoClick}>
+              {noTexts[Math.min(noClicks, noTexts.length - 1)]}
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <h1>awww 🥰</h1>
+          <h2>love you! Now you're My Valentine 💖</h2>
+          <img
+            className="cat"
+            src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+            alt="happy cat"
+          />
+        </>
+      )}
     </div>
   );
 }
