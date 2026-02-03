@@ -25,14 +25,14 @@ function App() {
     <div className="container">
       {!accepted ? (
         <>
-          <h1>Hi emma! 💕</h1>
+          <h1>Hi Emma! 💕</h1>
           <h2>Will you be my valentine?!</h2>
 
           <img
             className="cat"
             src={
               isAngry
-                ? "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"
+                ? "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzZrazUxaDRuM2Vzc2hoMTFqdTk5eWt6cmptaGRsZGY4cjlkczIyZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ETuDnzgfViziD4EhcC/giphy.gif"
                 : "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
             }
             alt="cat reaction"
