@@ -5,6 +5,7 @@ function App() {
   const [noClicks, setNoClicks] = useState(0);
   const [accepted, setAccepted] = useState(false);
   const [yesSize, setYesSize] = useState(1);
+  const [isAngry, setIsAngry] = useState(false);
 
   const noTexts = [
     "No",
@@ -16,6 +17,7 @@ function App() {
   const handleNoClick = () => {
     setNoClicks((prev) => prev + 1);
     setYesSize((prev) => prev + 0.25);
+    setIsAngry(true);
   };
 
   if (accepted) {
@@ -39,8 +41,12 @@ function App() {
 
       <img
         className="cat"
-        src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-        alt="cute cat with rose"
+        src={
+          isAngry
+            ? "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"
+            : "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+        }
+        alt="cat reaction"
       />
 
       <div className="buttons">
