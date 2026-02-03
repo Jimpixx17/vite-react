@@ -2,47 +2,60 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [yes, setYes] = useState(false);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [noClicks, setNoClicks] = useState(0);
+  const [accepted, setAccepted] = useState(false);
+  const [yesSize, setYesSize] = useState(1);
 
-  const moveNo = () => {
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 200 - 100;
-    setPos({ x, y });
+  const noTexts = [
+    "No",
+    "NO?? Really?",
+    "If u say NO again, I gonna put a virus on ur phone!",
+    "Try Again 😤"
+  ];
+
+  const handleNoClick = () => {
+    setNoClicks((prev) => prev + 1);
+    setYesSize((prev) => prev + 0.25);
   };
+
+  if (accepted) {
+    return (
+      <div className="container">
+        <h1>awww 🥰</h1>
+        <h2>love you! Now you're My Valentine 💖</h2>
+        <img
+          className="cat"
+          src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+          alt="happy cat"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="container">
-      {yes ? (
-        <h1>
-          💖 YAAAY 💖 <br />
-          Dann ist es ein Date 😍
-        </h1>
-      ) : (
-        <>
-          <h1>
-            Willst du mein <br />
-            Valentinstag-Date sein? 💘
-          </h1>
+      <h1>hi emma! 💕</h1>
+      <h2>will you be my valentine?!</h2>
 
-          <div className="buttons">
-            <button className="yes" onClick={() => setYes(true)}>
-              Ja 💕
-            </button>
+      <img
+        className="cat"
+        src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+        alt="cute cat with rose"
+      />
 
-            <button
-              className="no"
-              onMouseEnter={moveNo}
-              onClick={moveNo}
-              style={{
-                transform: `translate(${pos.x}px, ${pos.y}px)`
-              }}
-            >
-              Nein 🙈
-            </button>
-          </div>
-        </>
-      )}
+      <div className="buttons">
+        <button
+          className="yes"
+          style={{ transform: `scale(${yesSize})` }}
+          onClick={() => setAccepted(true)}
+        >
+          YES 💖
+        </button>
+
+        <button className="no" onClick={handleNoClick}>
+          {noTexts[Math.min(noClicks, noTexts.length - 1)]}
+        </button>
+      </div>
     </div>
   );
 }
