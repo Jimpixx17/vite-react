@@ -33,6 +33,7 @@ h2 {
   max-width: 80%;
   border-radius: 20px;
   margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
 }
 
 .buttons {
