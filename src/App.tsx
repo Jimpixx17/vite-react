@@ -58,7 +58,7 @@ function App() {
           <h2>Love you! Now you're My Valentine 💖</h2>
           <img
             className="cat"
-            src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+            src="https://tenor.com/de/view/sleep-cat-two-cat-cat-cat-love-gif-23651667"
             alt="happy cat"
           />
         </>
